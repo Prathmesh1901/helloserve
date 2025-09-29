@@ -19,29 +19,13 @@ public class BookingService {
     }
 
     public Booking createBooking(Booking booking) {
-        if (booking == null) {
-            throw new RuntimeException("Booking cannot be null");
-        }
-        
         ParkingSpace space = booking.getSpace();
-        if (space == null) {
-            throw new RuntimeException("Space cannot be null");
-        }
-        
-        // Fetch the latest space status from database
-        ParkingSpace latestSpace = spaceRepo.findById(space.getId())
-            .orElseThrow(() -> new RuntimeException("Space not found"));
-            
-        if (!"AVAILABLE".equals(latestSpace.getStatus())) {
+        if (space == null || !"AVAILABLE".equals(space.getStatus())) {
             throw new RuntimeException("Space not available");
         }
-        
         // mark booked
-        latestSpace.setStatus("BOOKED");
-        spaceRepo.save(latestSpace);
-        
-        // Update booking with the latest space reference
-        booking.setSpace(latestSpace);
+        space.setStatus("BOOKED");
+        spaceRepo.save(space);
         return repo.save(booking);
     }
 

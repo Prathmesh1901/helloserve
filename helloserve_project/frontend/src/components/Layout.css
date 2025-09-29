@@ -1,0 +1,18 @@
+/* Main unified content wrapper for center area */
+.main-content {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 32px rgba(37, 99, 235, 0.10);
+  padding: 48px 40px 32px 40px;
+  max-width: 900px;
+  margin: 48px auto 32px auto;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body {
+  background: #f5f6fa;
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}

@@ -1,0 +1,142 @@
+/* Slide Menu Header and Close Button */
+.slide-menu-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 18px 18px 0 0;
+}
+.close-btn {
+  font-size: 2em;
+  color: #2563eb;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0 8px;
+  line-height: 1;
+}
+/* Back to Dashboard Button */
+.back-btn {
+  background: #f5f6fa;
+  color: #2563eb;
+  border: 1px solid #e0e7ef;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 1em;
+  transition: background 0.2s, color 0.2s;
+}
+.back-btn:hover {
+  background: #2563eb;
+  color: #fff;
+}
+/* Slide Menu Styles */
+.slide-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 16px rgba(37,99,235,0.10);
+  transition: right 0.3s cubic-bezier(.4,0,.2,1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.slide-menu.open {
+  right: 0;
+}
+.slide-menu-user {
+  display: flex;
+  align-items: center;
+  padding: 24px 24px 12px 24px;
+  border-bottom: 1px solid #e0e7ef;
+}
+.user-avatar {
+  width: 48px;
+  height: 48px;
+  background: #f59e42;
+  color: #fff;
+  font-size: 1.7em;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+.user-name {
+  font-weight: 600;
+  color: #2563eb;
+  font-size: 1.1em;
+}
+.user-email {
+  font-size: 0.95em;
+  color: #888;
+}
+.slide-menu-options {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 32px 24px;
+}
+.menu-btn {
+  background: #f5f6fa;
+  color: #2563eb;
+  border: 1px solid #e0e7ef;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.menu-btn:hover {
+  background: #2563eb;
+  color: #fff;
+}
+.signout-btn {
+  background: #f59e42;
+  color: #fff;
+  border: none;
+}
+.signout-btn:hover {
+  background: #8b9abb;
+}
+.hamburger {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 0.5em;
+  margin-right: 1.5em;
+  position: relative;
+  z-index: 1100;
+}
+.hamburger-bar {
+  width: 28px;
+  height: 4px;
+  background: #2563eb;
+  border-radius: 2px;
+  margin: 3px 0;
+  transition: 0.3s cubic-bezier(.4,0,.2,1);
+}
+.hamburger.open .bar1 {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.hamburger.open .bar2 {
+  opacity: 0;
+}
+.hamburger.open .bar3 {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
